@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "assets": ["mails/templates/*"],
+    "watchAssets": true,
+    "deleteOutDir": true
+  },
+  "entryFile": "../../dist/server/apps/server/src/main"
+}

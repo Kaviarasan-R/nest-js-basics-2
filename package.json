@@ -1,0 +1,51 @@
+{
+  "name": "turbo-monorepo",
+  "version": "1.0.0",
+  "description": "Turbo monorepo template",
+  "author": "kaviarasan-r",
+  "private": true,
+  "packageManager": "npm@10.8.1",
+  "engines": {
+    "node": "20.16.0",
+    "npm": "10.8.1"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "node dist/server/apps/server/src/main"
+  },
+  "dependencies": {
+    "@nestjs-modules/mailer": "^2.0.2",
+    "@nestjs/cache-manager": "^2.2.2",
+    "@nestjs/config": "^3.2.3",
+    "@nestjs/jwt": "^10.2.0",
+    "@nestjs/passport": "^10.0.3",
+    "@types/cookie": "^0.6.0",
+    "cache-manager-redis-store": "^3.0.1",
+    "cookie": "^0.6.0",
+    "cookie-parser": "^1.4.6",
+    "googleapis": "^140.0.1",
+    "handlebars": "^4.7.8",
+    "nodemailer": "^6.9.14",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.7",
+    "@types/nodemailer": "^6.4.15",
+    "@types/passport-google-oauth20": "^2.0.16",
+    "@types/passport-jwt": "^4.0.1",
+    "@types/passport-local": "^1.0.38",
+    "turbo": "^2.0.9",
+    "typescript": "^5.5.4"
+  },
+  "workspaces": [
+    "apps/**",
+    "libs/**"
+  ]
+}
