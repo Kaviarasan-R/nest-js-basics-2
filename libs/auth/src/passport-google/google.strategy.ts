@@ -10,12 +10,18 @@ export class GoogleStrategy extends PassportStrategy(Strategy, "google") {
     configService: ConfigService
   ) {
     super({
-      clientID: configService.get<string>("GOOGLE_PASSPORT_CLIENT_ID"),
-      clientSecret: configService.get<string>("GOOGLE_PASSPORT_CLIENT_SECRET"),
+      clientID: configService.get<string>("GOOGLE_GMAIL_CLIENT_ID"),
+      clientSecret: configService.get<string>("GOOGLE_GMAIL_CLIENT_SECRET"),
       callbackURL:
         configService.get<string>("APP_URL") +
         configService.get<string>("GOOGLE_PASSPORT_REDIRECT_URI"),
-      scope: ["email", "profile"],
+      scope: [
+        "https://www.googleapis.com/auth/userinfo.email",
+        "https://www.googleapis.com/auth/userinfo.profile",
+        "https://www.googleapis.com/auth/meetings.space.created",
+        "https://www.googleapis.com/auth/calendar",
+        "https://www.googleapis.com/auth/calendar.events",
+      ],
     });
   }
   async validate(
