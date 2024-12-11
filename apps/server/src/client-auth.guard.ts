@@ -7,6 +7,6 @@ export class ClientAuthGuard implements CanActivate {
     const clientToken = request.query.token;
     const referrer = request.get("referrer");
     console.log(clientToken, referrer);
-    return referrer === "http://localhost:3000/" && clientToken === "test";
+    return referrer === "http://localhost:5173/" && clientToken === "test";
   }
 }
