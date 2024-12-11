@@ -109,7 +109,7 @@ export class AppController {
   ) {
     session.user = req.user;
     this.appService.getHello();
-    return res.redirect("http://localhost:3000/");
+    return res.redirect("http://localhost:5173/");
   }
 
   @Get("auth/google/profile")
